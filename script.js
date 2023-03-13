@@ -19,9 +19,21 @@ var finalArray = [];
 
 var userArray = [];
 
+// Prompts  for user input (and condition  for theses prompts)
+var numberCharacter = prompt ("How many Characters do you want for your password ? Select between 8 and 128?");
 
+  if(numberCharacter < 8 || numberCharacter > 128){
+      
+  return "Please choose a valid number of characters  between 8 and 128 .";
 
+} else if (isNaN(numberCharacter)) {
 
+  numberCharacter = prompt("Please enter a valid number.");
+}
+else {
+  alert("Your password will be " + numberCharacter + " characters long.");
+  
+}
 
 
 
