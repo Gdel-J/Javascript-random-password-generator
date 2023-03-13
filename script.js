@@ -83,12 +83,23 @@ var specialCharacters = confirm("Do you want special characters?");
   if (specialCharacters){
     finalArray = finalArray.concat(specialCharacterArray);
   }
+  
+ // loop  to pick random cards out of new array for length of password
 
+ for (var i = 0; i < numberCharacter; i++) {
+      
+  userArray.push (finalArray[Math.floor(Math.random() * finalArray.length)]); 
+  }
 
+  return userArray.join("") ;
 
-
-
+  // The join() method creates and returns a new string by concatenating all of the elements in an array (or an array-like object), separated by commas or a specified separator string. If the array has only one item, then that item will be returned without using the separator.
 }
+
+
+
+
+
  
 
 
