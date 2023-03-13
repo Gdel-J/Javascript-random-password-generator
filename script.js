@@ -19,14 +19,16 @@ var finalArray = [];
 
 var userArray = [];
 
-// Prompts  for user input (and condition  for theses prompts)
+// Prompts  for user input (and conditions  for theses prompts)
+
 var numberCharacter = prompt ("How many Characters do you want for your password ? Select between 8 and 128?");
 
   if(numberCharacter < 8 || numberCharacter > 128){
       
   return "Please choose a valid number of characters  between 8 and 128 .";
 
-} else if (isNaN(numberCharacter)) {
+  // isNan to indicate to put a valid number
+} else if (isNaN(numberCharacter)) { 
 
   numberCharacter = prompt("Please enter a valid number.");
 }
@@ -36,7 +38,51 @@ else {
 }
 
 
+var lowerCases = confirm("Do you want lowercase characters?");
 
+if (lowerCases) {
+  var turnToLowercase = alert("Your password will have lowercase characters.");
+}
+else {
+  alert("Your password will NOT have lowercase characters.");
+}
+
+var specialCharacters = confirm("Do you want special characters?");
+  
+  if (specialCharacters) {
+    alert("Your password will have special characters.");
+  }
+  else {
+    alert("Your password will NOT have special characters.");
+  }
+
+  if (lowerCases === false && upperCases === false && numbers === false && specialCharacters === false) {
+
+    return "Please select one charcter type at least !";
+  };
+
+
+  //  characters + concat method to combine two arrays and returns a new one 
+
+  if (numbers){
+     
+    finalArray = finalArray.concat(numberArray);
+    
+  }
+  
+  if (upperCases){
+    finalArray = finalArray.concat(upperCaseArray);
+  
+  }
+  
+  if (lowerCases){
+    finalArray = finalArray.concat(lowerCaseArray);
+  
+  }
+  
+  if (specialCharacters){
+    finalArray = finalArray.concat(specialCharacterArray);
+  }
 
 
 
